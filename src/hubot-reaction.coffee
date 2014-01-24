@@ -17,7 +17,7 @@ module.exports = (robot) ->
     request format('http://replygif.net/t/%s', msg.match[1]), (err, resp, body) ->
       gifs = cheerio.load(body)('img.gif')
       if gifs.length == 0
-        robot.send {user: msg.message.user}, "no gifs for msg.match[1] -- probably invalid category/tag"
+        robot.send {user: msg.message.user}, "no gifs for #{msg.match[1]} -- probably invalid category/tag"
       else
         ind = Math.floor(Math.random(gifs.length))
         msg.send gifs.eq(ind).attr('src').replace('thumbnail', 'i')
