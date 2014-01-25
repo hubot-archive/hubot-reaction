@@ -1,7 +1,7 @@
 # Hubot Reaction
 [![Build Status](https://travis-ci.org/jakswa/hubot-reaction.png)](https://travis-ci.org/jakswa/hubot-reaction) [![NPM version](https://badge.fury.io/js/hubot-reaction.png)](http://badge.fury.io/js/hubot-reaction)
 
-Give a replygif.net tag, you get a random gif back from first page.
+Give hubot a replygif.net tag, get a random gif back from that tag's first page.
 
 ```
 You> !reply approval
