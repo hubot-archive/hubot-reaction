@@ -13,11 +13,14 @@ request = require('request')
 cheerio = require('cheerio')
 format = require('util').format
 module.exports = (robot) ->
-  robot.hear /!reply (\w+)/, (msg) ->
-    request format('http://replygif.net/t/%s', msg.match[1]), (err, resp, body) ->
+  robot.parseReplyGifTag = (text) ->
+    text.toLowerCase().replace(/[^\w \-]+/g, '').replace(/--+/g, '').replace(/\ /g, '-')
+  robot.hear /!reply ([\-\w\. ]+)/, (msg) ->
+    tag = robot.parseReplyGifTag msg.match[1]
+    request format('http://replygif.net/t/%s', tag), (err, resp, body) ->
       gifs = cheerio.load(body)('img.gif')
       if gifs.length == 0
-        robot.send {user: msg.message.user}, "no gifs for #{msg.match[1]} -- probably invalid category/tag"
+        robot.send {user: msg.message.user}, "no gifs for #{tag} -- probably invalid category/tag"
       else
         ind = Math.floor(Math.random(gifs.length))
         msg.send gifs.eq(ind).attr('src').replace('thumbnail', 'i')
