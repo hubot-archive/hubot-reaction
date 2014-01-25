@@ -22,7 +22,7 @@ module.exports = (robot) ->
       if gifs.length == 0
         robot.send {user: msg.message.user}, "no gifs for #{tag} -- probably invalid category/tag"
       else
-        ind = Math.floor(Math.random(gifs.length))
+        ind = Math.floor(Math.random() * gifs.length)
         msg.send gifs.eq(ind).attr('src').replace('thumbnail', 'i')
   robot.hear /\?reply/, (msg) ->
     robot.send {user: msg.message.user}, "stuff" # TODO: this part
