@@ -1,7 +1,7 @@
 {
   "name": "hubot-reaction",
   "description": "replygif.net hubotted",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "author": "Jake Swanson <jakswa@gmail.com>",
   "license": "MIT",
   "keywords": [
