@@ -15,7 +15,7 @@ format = require('util').format
 module.exports = (robot) ->
   robot.parseReplyGifTag = (text) ->
     text.toLowerCase().replace(/[^\w \-]+/g, '').replace(/--+/g, '').replace(/\ /g, '-')
-  robot.hear /!reply ([\-\w\. ]+)/, (msg) ->
+  robot.hear /^!reply (.+)$/, (msg) ->
     tag = robot.parseReplyGifTag msg.match[1]
     request format('http://replygif.net/t/%s', tag), (err, resp, body) ->
       gifs = cheerio.load(body)('img.gif')
