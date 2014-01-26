@@ -12,5 +12,7 @@ Hubot> http://replygif.net/i/1196.gif
 
 ## Installation
 
-- Add the package `hubot-reaction` as a dependency in your Hubot package.json file. 
+- Add the package `hubot-reaction` as a dependency in your Hubot package.json file.
+  - `npm install --save hubot-reaction`
 - Then add `hubot-reaction` to the list in the `external-scripts.json` file.
+  - ie `['some-script', 'some-other-script', 'hubot-reaction']`
