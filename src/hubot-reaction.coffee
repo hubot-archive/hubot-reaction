@@ -1,6 +1,10 @@
 # Description:
 #   https://github.com/jakswa/hubot-reaction
-# 
+#
+# Dependencies:
+#   "request"
+#   "cheeiro"
+#
 # Configuration:
 #   None
 # 
