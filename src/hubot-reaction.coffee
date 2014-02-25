@@ -3,7 +3,7 @@
 #
 # Dependencies:
 #   "request"
-#   "cheeiro"
+#   "cheerio"
 #
 # Configuration:
 #   None
